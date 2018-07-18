@@ -1,0 +1,7 @@
+function xdot=simulatorofficial(time,x,U,l1,l2,m1,m2,g,c1,c2)
+xdot1=x(2);    
+xdot2=(3*(4*l2*U(1) - 4*l2*U(2) - 6*l1*U(2)*cos(x(3)) - 4*c1*l2*x(2) + 4*c2*l2*x(4) + 6*c2*l1*x(4)*cos(x(3)) + 2*l1*l2^2*m2*x(2)^2*sin(x(3)) + 2*l1*l2^2*m2*x(4)^2*sin(x(3)) - 2*g*l1*l2*m1*cos(x(1)) - 4*g*l1*l2*m2*cos(x(1)) + 3*g*l1*l2*m2*cos(x(1) + x(3))*cos(x(3)) + 3*l1^2*l2*m2*x(2)^2*cos(x(3))*sin(x(3)) + 4*l1*l2^2*m2*x(2)*x(4)*sin(x(3))))/(4*l1^2*l2*m1 + 12*l1^2*l2*m2 - 9*l1^2*l2*m2*cos(x(3))^2);
+xdot3=x(4);
+xdot4=-(3*(4*l2^2*m2*U(1) - 12*l1^2*m2*U(2) - 4*l1^2*m1*U(2) - 4*l2^2*m2*U(2) - 4*c1*l2^2*m2*x(2) + 4*c2*l1^2*m1*x(4) + 12*c2*l1^2*m2*x(4) + 4*c2*l2^2*m2*x(4) + 2*l1*l2^3*m2^2*x(2)^2*sin(x(3)) + 6*l1^3*l2*m2^2*x(2)^2*sin(x(3)) + 2*l1*l2^3*m2^2*x(4)^2*sin(x(3)) + 6*g*l1^2*l2*m2^2*cos(x(1) + x(3)) - 4*g*l1*l2^2*m2^2*cos(x(1)) + 6*l1*l2*m2*U(1)*cos(x(3)) - 12*l1*l2*m2*U(2)*cos(x(3)) + 2*l1^3*l2*m1*m2*x(2)^2*sin(x(3)) + 4*l1*l2^3*m2^2*x(2)*x(4)*sin(x(3)) + 3*g*l1*l2^2*m2^2*cos(x(1) + x(3))*cos(x(3)) - 6*c1*l1*l2*m2*x(2)*cos(x(3)) + 12*c2*l1*l2*m2*x(4)*cos(x(3)) + 6*l1^2*l2^2*m2^2*x(2)^2*cos(x(3))*sin(x(3)) + 3*l1^2*l2^2*m2^2*x(4)^2*cos(x(3))*sin(x(3)) - 6*g*l1^2*l2*m2^2*cos(x(1))*cos(x(3)) + 2*g*l1^2*l2*m1*m2*cos(x(1) + x(3)) - 2*g*l1*l2^2*m1*m2*cos(x(1)) + 6*l1^2*l2^2*m2^2*x(2)*x(4)*cos(x(3))*sin(x(3)) - 3*g*l1^2*l2*m1*m2*cos(x(1))*cos(x(3))))/(12*l1^2*l2^2*m2^2 + 4*l1^2*l2^2*m1*m2 - 9*l1^2*l2^2*m2^2*cos(x(3))^2);
+xdot=[xdot1;xdot2;xdot3;xdot4];
+end
